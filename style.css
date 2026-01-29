@@ -45,13 +45,14 @@ body {
     color: #ff4d6d;
     font-size: 3.6rem;
     margin-bottom: 5px;
-    margin-top: 175px;
+    margin-top: 20px;
 }
 
 .gift-subtitle {
     color: #fb6f92;
     font-size: 1.8rem;
     margin-top: -5px;
+    margin-bottom: 50px;
 
 }
 
@@ -359,7 +360,7 @@ button {
 #giftBtn {
     font-size: 1.4rem;
     padding: 14px 28px;
-    margin-top: 5px;
+    margin-top: -10px;
     margin-left: 20px;
     position: relative;
     z-index: 10;
@@ -367,4 +368,121 @@ button {
 
 #scene3 {
     position: relative; /* This allows absolute children to position correctly inside Scene 3 */
+}
+
+.rainbow.r {
+    bottom: 100px;
+    right: 20px;
+    width: 500px;
+    margin-top: -100px;
+    
+}
+
+.paper {
+    background: #fffdf5;
+    width: 90%;
+    max-width: 600px;
+    padding: 30px 25px;
+    margin: auto;
+    border-radius: 8px;
+
+    /* paper shadow */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+    /* ruled lines */
+    background-image: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 24px,
+        rgba(255, 182, 193, 0.4) 25px
+    );
+
+    transform: rotate(-1.5deg);
+}
+
+.paper-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.paper-text span.red {
+    color: #e63946;
+    font-weight: bold;
+}
+
+.paper-sign {
+    text-align: right;
+    margin-top: 30px;
+    font-weight: bold;
+    color: #e63946;
+}
+
+.paper {
+    opacity: 0;
+    animation: paperAppear 1.2s ease forwards;
+}
+
+@keyframes paperAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px) rotate(-2deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(-1.5deg);
+    }
+}
+
+.paper-sign {
+    opacity: 0;
+    animation: writeSignature 2s ease forwards;
+    animation-delay: 1.6s; /* happens after paper appears */
+    position: relative;
+}
+
+/* blinking cursor */
+.paper-sign::after {
+    content: "|";
+    margin-left: 4px;
+    animation: blink 1s infinite;
+}
+
+@keyframes writeSignature {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.sway {
+    animation: paperSway 6s ease-in-out infinite;
+    animation-delay: 1.2s; /* waits until paperAppear finishes */
+}
+
+@keyframes paperSway {
+    0% {
+        transform: translateY(0) rotate(-1.5deg);
+    }
+    50% {
+        transform: translateY(-2px) rotate(-1.2deg);
+    }
+    100% {
+        transform: translateY(0) rotate(-1.5deg);
+    }
+}
+
+.next-love-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 }

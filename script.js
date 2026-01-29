@@ -106,3 +106,25 @@ function createPetal() {
 
 // Continuously create petals
 setInterval(createPetal, 400);
+
+function goToScene5() {
+    const s4 = document.getElementById('scene4');
+    const s5 = document.getElementById('scene5');
+
+    if (s4 && s5) {
+        s4.style.display = 'none';
+        s5.style.display = 'flex';
+        window.scrollTo(0, 0);
+    }
+}
+
+// Play background music
+function playMusic() {
+    const music = document.getElementById("bgMusic");
+    music.play().catch(() => {
+        console.log("Music autoplay blocked. Will play on next user interaction.");
+    });
+}
+
+// Call this when user clicks "Yes 💗"
+document.getElementById("yesBtn").addEventListener("click", playMusic);
