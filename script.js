@@ -1,3 +1,4 @@
+// Messages for No button teasing
 const messages = [
     "Are you sure?",
     "Really sure??",
@@ -10,6 +11,7 @@ const messages = [
 let messageIndex = 0;
 let yesClickPower = 0;
 
+// Scene 1: No button behavior
 function shrinkNo() {
     const noBtn = document.getElementById('noBtn');
     const yesBtn = document.getElementById('yesBtn');
@@ -20,9 +22,8 @@ function shrinkNo() {
     noBtn.textContent = messages[messageIndex];
     messageIndex = (messageIndex + 1) % messages.length;
 
-    // Grow Yes
+    // Grow Yes button
     yesClickPower++;
-
     if (yesClickPower < 5) {
         const currentSize = parseFloat(getComputedStyle(yesBtn).fontSize);
         yesBtn.style.fontSize = (currentSize + 12) + "px";
@@ -39,13 +40,14 @@ function shrinkNo() {
         noBtn.style.display = "none";
     }
 
-    // Shrink No
+    // Shrink No button
     const currentNoSize = parseFloat(getComputedStyle(noBtn).fontSize);
     if (currentNoSize > 8) {
         noBtn.style.fontSize = (currentNoSize - 2) + "px";
     }
 }
 
+// Scene 1 → Scene 2
 function goToScene2() {
     const s1 = document.getElementById('scene1');
     const s2 = document.getElementById('scene2');
@@ -57,16 +59,7 @@ function goToScene2() {
     }
 }
 
-function showGift() {
-    const gift = document.getElementById('giftContent');
-    const btn = document.getElementById('giftBtn');
-
-    if (gift && btn) {
-        gift.style.display = 'flex';
-        btn.style.display = 'none';
-    }
-}
-
+// Scene 2 → Scene 3 (Gift Scene)
 function goToScene3() {
     const s2 = document.getElementById('scene2');
     const s3 = document.getElementById('scene3');
@@ -77,6 +70,25 @@ function goToScene3() {
         window.scrollTo(0, 0);
     }
 }
+
+// Optional: Add a wrapper function so your HTML button still works
+function showGift() {
+    goToScene3();
+}
+
+// Scene 3 → Scene 4
+function goToScene4() {
+    const s3 = document.getElementById('scene3');
+    const s4 = document.getElementById('scene4');
+
+    if (s3 && s4) {
+        s3.style.display = 'none';
+        s4.style.display = 'flex';
+        window.scrollTo(0, 0);
+    }
+}
+
+// Petals effect
 function createPetal() {
     const petal = document.createElement("div");
     petal.classList.add("petal");
@@ -92,5 +104,5 @@ function createPetal() {
     }, 10000);
 }
 
-// Create petals continuously
+// Continuously create petals
 setInterval(createPetal, 400);

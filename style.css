@@ -1,3 +1,4 @@
+/* ===== BODY & GENERAL ===== */
 body {
     background-color: #ffd6e0;
     font-family: 'Patrick Hand', cursive;
@@ -20,17 +21,40 @@ body {
     transition: opacity 0.5s ease;
 }
 
+#scene1 {
+    justify-content: flex-start; /* move content towards top */
+    padding-top: 200px; /* extra top spacing */
+    position: relative;
+}
+
 /* TITLES */
 .valentine-title {
     color: #ff4d6d;
     font-size: 3rem;
-    margin-bottom: 0;
+    margin-bottom: 5px;
 }
 
 .valentine-subtitle {
     color: #fb6f92;
-    font-size: 1.5rem;
+    font-size: 2.3rem;
+    margin-top: -5px;
+
 }
+
+.gift-title {
+    color: #ff4d6d;
+    font-size: 3.6rem;
+    margin-bottom: 5px;
+    margin-top: 175px;
+}
+
+.gift-subtitle {
+    color: #fb6f92;
+    font-size: 1.8rem;
+    margin-top: -5px;
+
+}
+
 
 /* BUTTONS */
 .buttons {
@@ -202,4 +226,145 @@ button {
     .quote {
         font-size: 1.1rem;
     }
+}
+
+/* ===== LOVE BUTTON ===== */
+.love-button {
+    position: fixed; /* floats over screen */
+    bottom: 40px;
+    right: 40px;
+    font-size: 2rem;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ff4d6d;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 77, 109, 0.3);
+    display: none; /* hidden initially */
+    z-index: 20;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.love-button:hover {
+    transform: scale(1.2);
+    opacity: 0.9;
+}
+
+/* Tablet landscape adjustments for love button */
+@media (max-width: 1024px) and (orientation: landscape) {
+    .love-button {
+        bottom: 30px;
+        right: 30px;
+        font-size: 1.8rem;
+        padding: 10px 14px;
+    }
+}
+
+.love-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 3rem;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ff4d6d;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 77, 109, 0.5);
+    display: none;
+    z-index: 100;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.2); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.2); }
+}
+
+/* Stickers only for scene1 */
+#scene1 .sticker {
+    position: absolute;  /* float over the scene */
+    height: auto;
+    z-index: 5;          /* behind buttons but above background */
+    animation: floatSticker 4s ease-in-out infinite; /* gentle floating effect */
+}
+
+/* Top-center sticker */
+.sticker.top-center {
+    position: absolute;
+    top: 105px;       /* distance from top of scene1 */
+    left: 45%;       /* center horizontally */
+    transform: translateX(-50%); /* perfect horizontal centering */
+    width: 150px;     /* adjust size */
+    max-width: none;
+    height: auto;
+    z-index: 5;
+    animation: floatSticker 4s ease-in-out infinite;
+}
+
+.hanging.o {
+    position: absolute;
+    top: -5px;       /* distance from top of scene1 */
+    left: 0%;       /* center horizontally */
+    width: 150px;     /* adjust size */
+    max-width: none;
+    height: auto;
+    z-index: 5;
+    animation: floatSticker 4s ease-in-out infinite;
+}
+
+
+/* Floating animation (reuse for all stickers) */
+@keyframes floatSticker {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+/* Bottom corners */
+.sticker.bottom-left {
+    bottom: -150px;
+    left: -30px;
+    width: 500px;
+}
+
+.sticker.bottom-right {
+    bottom: 20px;
+    right: 20px;
+    width: 150px;
+}
+
+#scene1 .sticker.op {
+    top: 0;
+    right: 0;
+    width: 150px;
+}
+
+
+/* Gentle floating animation */
+@keyframes floatSticker {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+#scene2 .sticker.top-center,
+#scene3 .sticker.top-center {
+    display: none;
+}
+
+#giftBtn {
+    font-size: 1.4rem;
+    padding: 14px 28px;
+    margin-top: 5px;
+    margin-left: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+#scene3 {
+    position: relative; /* This allows absolute children to position correctly inside Scene 3 */
 }

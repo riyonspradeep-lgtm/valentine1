@@ -9,46 +9,84 @@
 </head>
 <body>
 
+    <!-- SCENE 1 -->
     <div id="scene1" class="scene">
-        <h1 class="valentine-title">Hey there,</h1>
-        <h2 class="valentine-subtitle">Will you be my valentine??</h2>
+ 
+        <h1 class="valentine-title">Hey hrithuu,</h1>
+        <h2 class="valentine-subtitle">Will you be my valentine???????</h2>
         <div class="buttons">
             <button id="yesBtn" onclick="goToScene2()">Yes 💗</button>
             <button id="noBtn" onclick="shrinkNo()">No 😰</button>
         </div>
+        <!-- Cute stickers only for scene1 -->
+        <img src="hanging.png" class="hanging o" alt="cute sticker">
+        <img src="sticker-op.png" class="sticker op" alt="cute sticker">
+        <img src="sticker-top.png" class="sticker top-center" alt="cute sticker">
+        <img src="sticker-left.png" class="sticker bottom-left" alt="cute sticker">
+        <img src="sticker-right.png" class="sticker bottom-right" alt="cute sticker">
     </div>
+    
 
+    <!-- SCENE 2 -->
     <div id="scene2" class="scene" style="display: none;">
-        <h1 id="giftTitle" class="valentine-title">Aishhhh u said yes!</h1>
-        <h2 id="giftSubtitle" class="valentine-subtitle">this is for you monkey??</h2>
+        <h1 id="giftTitle" class="gift-title">Aishhhh u said yes!</h1>
+        <h2 id="giftSubtitle" class="gift-subtitle">this is for you monkey??</h2>
 
         <button id="giftBtn" onclick="showGift()">click heree💝</button>
-        <div id="giftContent" style="display:none;">
-            <div class="gift-layout">
 
-                 <!-- LEFT QUOTES -->
-                 <div class="quotes-column">
-                      <div class="quote left">"Every flower reminds me of you."</div>
-                      <div class="quote left">"You make ordinary days special."</div>
-                  </div>
+       </div>
 
-                  <!-- CENTER IMAGE -->
-                  <div class="image-column">
-                      <img src="rose.png" alt="Roses" class="gift-image floating" alt="Roses">
-                  </div>
+    <!-- SCENE 3 -->
+    <div id="scene3" class="scene" style="display: none;">
+         <h1 id="roseTitle" class="rose-title">Rosess for uuu!</h1>
 
-                  <!-- RIGHT QUOTES -->
-                  <div class="quotes-column">
-                      <div class="quote right">"You are my favorite thought."</div>
-                      <div class="quote right">
-                          "Distance means so little when someone means so much."
-                      </div>
-                  </div>
+          <div class="gift-layout">
+              <!-- LEFT QUOTES -->
+              <div class="quotes-column">
+                   <div class="quote left">"Every flower reminds me of you."</div>
+                   <div class="quote left">"You make ordinary days special."</div>
+                   <div class="quote left">"i lovee uuuuuuuuuu."</div>
+               </div>
 
-        </div>
+               <!-- CENTER IMAGE -->
+               <div class="image-column">
+                   <img src="rose.png" alt="Roses" class="gift-image floating">
+               </div>
 
+               <!-- RIGHT QUOTES -->
+               <div class="quotes-column">
+                   <div class="quote right">"You are my favorite thought."</div>
+                   <div class="quote right">"Distance means so little when someone means so much."</div>
+                   <div class="quote right">"You are my favorite personn."</div>
+               </div>
+           </div>
+           <button
+               id="loveBtn"
+               onclick="goToScene4()"
+               style="
+                   position: fixed;
+                   bottom: 20px;
+                   right: 20px;
+                   font-size: 3.2rem;
+                   background: none;
+                   border: none;
+                   cursor: pointer;
+                   z-index: 999999;
+               "
+           >
+               ❤️
+           </button>
+       </div>
+
+    <!-- SCENE 4 -->
+    <div id="scene4" class="scene" style="display: none;">
+        <h1 class="valentine-title">Surprise Scene 4!</h1>
+        <h2 class="valentine-subtitle">Here’s something extra for you 💖</h2>
     </div>
-    <script src="script.js"></script>
+
+    <!-- PETALS EFFECT -->
     <div id="petals"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
