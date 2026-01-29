@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Surprise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="scene1" class="scene">
+        <h1 class="valentine-title">Hey there,</h1>
+        <h2 class="valentine-subtitle">Will you be my valentine??</h2>
+        <div class="buttons">
+            <button id="yesBtn" onclick="goToScene2()">Yes 💗</button>
+            <button id="noBtn" onclick="shrinkNo()">No 😰</button>
+        </div>
+    </div>
+
+    <div id="scene2" class="scene" style="display: none;">
+        <h1 id="giftTitle" class="valentine-title">Aishhhh u said yes!</h1>
+        <h2 id="giftSubtitle" class="valentine-subtitle">this is for you monkey??</h2>
+
+        <button id="giftBtn" onclick="showGift()">click heree💝</button>
+        <div id="giftContent" style="display:none;">
+            <div class="gift-layout">
+
+                 <!-- LEFT QUOTES -->
+                 <div class="quotes-column">
+                      <div class="quote left">"Every flower reminds me of you."</div>
+                      <div class="quote left">"You make ordinary days special."</div>
+                  </div>
+
+                  <!-- CENTER IMAGE -->
+                  <div class="image-column">
+                      <img src="rose.png" alt="Roses" class="gift-image floating" alt="Roses">
+                  </div>
+
+                  <!-- RIGHT QUOTES -->
+                  <div class="quotes-column">
+                      <div class="quote right">"You are my favorite thought."</div>
+                      <div class="quote right">
+                          "Distance means so little when someone means so much."
+                      </div>
+                  </div>
+
+        </div>
+
+    <p style="margin-top:40px;">"A rose for a rose..."</p>
+</div>
+    <script src="script.js"></script>
+    <div id="petals"></div>
+</body>
+</html>

@@ -1,0 +1,219 @@
+body {
+    background-color: #ffd6e0;
+    font-family: 'Patrick Hand', cursive;
+    margin: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.scene {
+    background-color: #ffd6e0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: opacity 0.5s ease;
+}
+
+.valentine-title {
+    color: #ff4d6d;
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
+.valentine-subtitle {
+    color: #fb6f92;
+    font-size: 1.5rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 999;
+}
+
+button {
+    pointer-events: all;
+    position: relative;
+    padding: 15px 30px;
+    font-size: 20px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Patrick Hand', cursive;
+    transition: all 0.3s ease;
+}
+
+#yesBtn {
+    z-index: 10;
+    white-space: nowrap;
+    background-color: #ff4d6d;
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+}
+
+#noBtn {
+    background-color: #fb6f92;
+    color: white;
+}
+
+/* Shake animation */
+.shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Gift scroll area */
+.scroll-area {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.gift-image {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Quote bubbles */
+.quote {
+    background-color: white;
+    padding: 20px;
+    border-radius: 25px;
+    width: 70%;
+    max-width: 400px;
+    color: #ff4d6d;
+    font-size: 1.3rem;
+    box-shadow: 2px 5px 15px rgba(0,0,0,0.05);
+    line-height: 1.4;
+}
+
+.left {
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+}
+
+.right {
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+}
+
+.next-btn {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background-color: #ff4d6d;
+    color: white;
+}
+/* MAIN 3-COLUMN LAYOUT */
+.gift-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 40px;
+}
+
+/* LEFT & RIGHT QUOTES COLUMN */
+.quotes-column {
+    flex: 0 0 27%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* CENTER IMAGE COLUMN */
+.image-column {
+    flex: 0 0 55%;   /* THIS is the key */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gift-image {
+    width: 100%;
+    max-width: none;     /* 🚨 remove the limit */
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(255, 77, 109, 0.35);
+}
+
+/* Bouquet bloom-in */
+.floating {
+    animation: bloomIn 1.2s ease-out forwards, float 4s ease-in-out infinite;
+}
+
+@keyframes bloomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* 🌸 Falling petals container */
+#petals {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* so clicks still work */
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* 🌸 Single petal */
+.petal {
+    position: absolute;
+    top: -20px;
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 105, 135, 0.7);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(45deg);
+    animation: fall linear forwards;
+}
+
+/* 🌸 Falling animation */
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
