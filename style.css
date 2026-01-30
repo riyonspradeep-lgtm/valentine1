@@ -171,9 +171,13 @@ button {
 /* 🌸 PETALS */
 #petals {
     position: fixed;
+    top: 0;
+    left: 0;
+    widht: 100vw;
+    height: 100vh;
     inset: 0;
     pointer-events: none;
-    z-index: 1;
+    z-index: 999;
 }
 
 .petal {
@@ -485,4 +489,31 @@ button {
     position: fixed;
     bottom: 20px;
     right: 20px;
+}
+
+.qr-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.qr-code {
+    width: 180px;
+    border-radius: 20px;
+    padding: 15px;
+    background: #fff0f6;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+    animation: float 3s ease-in-out infinite;
+    filter: blur(3px);
+    transition: 0.4s;
+}
+
+.qr-code:hover {
+    filter: blur(0);
+}
+
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
 }

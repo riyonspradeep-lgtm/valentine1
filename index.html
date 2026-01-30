@@ -9,86 +9,72 @@
 </head>
 <body>
 
-    <!-- SCENE 1 -->
-    <div id="scene1" class="scene">
- 
-        <h1 class="valentine-title">Hey hrithuu,</h1>
-        <h2 class="valentine-subtitle">Will you be my valentine???????</h2>
-        <div class="buttons">
-            <button id="yesBtn" onclick="goToScene2()">Yes 💗</button>
-            <button id="noBtn" onclick="shrinkNo()">No 😰</button>
-        </div>
-        <!-- Cute stickers only for scene1 -->
-        <img src="hanging.png" class="hanging o" alt="cute sticker">
-        <img src="sticker-op.png" class="sticker op" alt="cute sticker">
-        <img src="sticker-top.png" class="sticker top-center" alt="cute sticker">
-        <img src="sticker-left.png" class="sticker bottom-left" alt="cute sticker">
-        <img src="sticker-right.png" class="sticker bottom-right" alt="cute sticker">
+<!-- 🎵 BACKGROUND MUSIC -->
+<audio id="bgMusic" src="love.mp3" autoplay loop></audio>
+
+<!-- SCENE 1 -->
+<div id="scene1" class="scene">
+    <h1 class="valentine-title">Hey hrithuu,</h1>
+    <h2 class="valentine-subtitle">Will you be my valentine???????</h2>
+
+    <div class="buttons">
+        <button id="yesBtn" onclick="goToScene2()">Yes 💗</button>
+        <button id="noBtn" onclick="shrinkNo()">No 😰</button>
     </div>
-    
 
-    <!-- SCENE 2 -->
-    <div id="scene2" class="scene" style="display: none;">
-        <h1 id="giftTitle" class="gift-title">Aishhhh u said yes!</h1>
-        <h2 id="giftSubtitle" class="gift-subtitle">this is for you monkey??</h2>
- 
-         <!-- Cute stickers only for scene2 -->
-        <img src="rainbow.png" class="rainbow r" alt="cute sticker">
+    <img src="hanging.png" class="hanging o" alt="cute sticker">
+    <img src="sticker-op.png" class="sticker op" alt="cute sticker">
+    <img src="sticker-top.png" class="sticker top-center" alt="cute sticker">
+    <img src="sticker-left.png" class="sticker bottom-left" alt="cute sticker">
+    <img src="sticker-right.png" class="sticker bottom-right" alt="cute sticker">
+</div>
 
-        <button id="giftBtn" onclick="showGift()">lookkk heree😚</button>
+<!-- SCENE 2 -->
+<div id="scene2" class="scene" style="display:none;">
+    <h1 class="gift-title">Aishhhh u said yes!</h1>
+    <h2 class="gift-subtitle">this is for you monkey??</h2>
 
-     </div>
+    <img src="rainbow.png" class="rainbow r" alt="cute sticker">
 
-    <!-- SCENE 3 -->
-    <div id="scene3" class="scene" style="display: none;">
-         <h1 id="roseTitle" class="rose-title">Rosess for uuu!</h1>
+    <button id="giftBtn" onclick="showGift()">lookkk heree😚</button>
+</div>
 
-          <div class="gift-layout">
-              <!-- LEFT QUOTES -->
-              <div class="quotes-column">
-                   <div class="quote left">"Every flower reminds me of you."</div>
-                   <div class="quote left">"You make ordinary days special."</div>
-                   <div class="quote left">"i lovee uuuuuuuuuu."</div>
-               </div>
+<!-- SCENE 3 -->
+<div id="scene3" class="scene" style="display:none;">
+    <h1 class="rose-title">Rosess for uuu!</h1>
 
-               <!-- CENTER IMAGE -->
-               <div class="image-column">
-                   <img src="rose.png" alt="Roses" class="gift-image floating">
-               </div>
+    <div class="gift-layout">
+        <div class="quotes-column">
+            <div class="quote left">"Every flower reminds me of you."</div>
+            <div class="quote left">"You make ordinary days special."</div>
+            <div class="quote left">"i lovee uuuuuuuuuu."</div>
+        </div>
 
-               <!-- RIGHT QUOTES -->
-               <div class="quotes-column">
-                   <div class="quote right">"You are my favorite thought."</div>
-                   <div class="quote right">"Distance means so little when someone means so much."</div>
-                   <div class="quote right">"You are my favorite personn."</div>
-               </div>
-           </div>
-           <button
-               id="loveBtn"
-               onclick="goToScene4()"
-               style="
-                   position: fixed;
-                   bottom: 20px;
-                   right: 20px;
-                   font-size: 3.2rem;
-                   background: none;
-                   border: none;
-                   cursor: pointer;
-                   z-index: 999999;
-               "
-           >
-               ❤️
-           </button>
-       </div>
+        <div class="image-column">
+            <img src="rose.png" alt="Roses" class="gift-image floating">
+        </div>
 
-    <!-- SCENE 4 -->
-    <div id="scene4" class="scene" style="display: none;">
-        <h1 class="valentine-title">Ahhh miss youuuuuuuuu!</h1>
-        <h2 class="valentine-subtitle">Read thissss!!!</h2>
+        <div class="quotes-column">
+            <div class="quote right">"You are my favorite thought."</div>
+            <div class="quote right">"Distance means so little when someone means so much."</div>
+            <div class="quote right">"You are my favorite personn."</div>
+        </div>
+    </div>
 
-        <div class="paper-wrapper sway">
-            <div class="paper">
+    <button
+        onclick="goToScene4()"
+        style="position:fixed; bottom:20px; right:20px; font-size:3.2rem; background:none; border:none; cursor:pointer; z-index:10000;">
+        ❤️
+    </button>
+</div>
 
+<!-- SCENE 4 -->
+<div id="scene4" class="scene" style="display: none;">
+    <h1 class="valentine-title">Ahhh miss youuuuuuuuu!</h1>
+    <h2 class="valentine-subtitle">Read thissss!!!</h2>
+
+    <div class="paper-wrapper sway">
+        <div class="paper">
             <p class="paper-text">
                 Heyy,<br><br>
 
@@ -121,25 +107,29 @@
         </div>
     </div>
     
+    <!-- ✅ BUTTON INSIDE SCENE 4 -->
     <button class="next-love-btn" onclick="goToScene5()">
         Now click here, love 💖
     </button> 
-
 </div>
 
 <!-- SCENE 5 -->
-<div id="scene5" class="scene" style="display: none;">
+<div id="scene5" class="scene" style="display:none;">
     <h1 class="valentine-title">💛</h1>
     <h2 class="valentine-subtitle">
-        This is just the beginning…
+        May be it feels a bit cringe but i really love uuu
     </h2>
+
+    <div class="qr-section">
+        <h2>Scan chyyyuuu hrithuuu 💕</h2>
+        <img src="qr-love.png" alt="Love QR" class="qr-code">
+        <p>(Open with your camera 🥺)</p>
+    </div>
 </div>
 
-    <!-- PETALS EFFECT -->
-    <div id="petals"></div>
+<!-- 🌸 PETALS (GLOBAL – ALL SCENES) -->
+<div id="petals"></div>
 
-    <script src="script.js"></script>
-
-   <audio id="bgMusic" src="love.mp3" autoplay loop></audio>
+<script src="script.js"></script>
 </body>
 </html>
